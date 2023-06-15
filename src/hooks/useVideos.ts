@@ -12,7 +12,7 @@ export const useVideos = () => {
     {
       enabled: searchInput.isActive,
       onError() {
-        alert("Hi");
+        alert("Error with your connection");
       },
     }
   );

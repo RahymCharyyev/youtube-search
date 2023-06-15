@@ -1,6 +1,7 @@
 import Styled from "./Home.styled";
 import Search from "components/search/Search";
 import Card from "components/card/Card";
+import Controls from "components/controls/Controls";
 import { IItems } from "types/videos";
 import { useVideos } from "hooks/useVideos";
 
@@ -13,6 +14,7 @@ const Home = () => {
       <Styled.Main>
         <Styled.Title>Поиск видео</Styled.Title>
         <Search />
+        {data && <Controls />}
         <Styled.CardsWrapper>
           {data?.items.map((video: IItems, index) => (
             <Card

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Main = styled("div")`
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,6 @@ const CardsWrapper = styled("div")`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  /* margin: 0 200px; */
 `;
 
 const HomeStyled = { Main, Title, CardsWrapper };

@@ -1,10 +1,19 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Styled from "./Header.styled";
 import Logo from "assets/logo.svg";
 
 const Header = () => {
   const { pathname } = useLocation();
+  const location = useLocation();
+  const navigate = useNavigate();
+  if (location.pathname === "/login") {
+    return null;
+  }
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
   return (
     <Styled.Main>
       <Styled.Nav>
@@ -20,7 +29,7 @@ const Header = () => {
             Избранное
           </Styled.Link>
         </Styled.Links>
-        <Styled.Button>Выйти</Styled.Button>
+        <Styled.Button onClick={logout}>Выйти</Styled.Button>
       </Styled.Nav>
     </Styled.Main>
   );

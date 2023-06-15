@@ -56,6 +56,7 @@ const Link = styled(RouterLink)<ILinkProps>`
       ? `
     border-bottom: 2px solid #1390e5;
     padding: 38px 0;
+    color: #1390e5;
     `
       : ""}
 `;

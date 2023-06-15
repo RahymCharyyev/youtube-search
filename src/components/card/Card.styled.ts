@@ -7,6 +7,10 @@ const CardWrapper = styled("div")`
   gap: 8px;
 `;
 
+const Img = styled("img")`
+  border-radius: 10px;
+`;
+
 const Title = styled("h2")`
   font-size: 14px;
   padding: 0;
@@ -21,7 +25,8 @@ const Channel = styled("p")`
   font-size: 14px;
   padding: 0;
   margin: 0;
+  color: #1717194d;
 `;
-const CardStyled = { CardWrapper, Title, Channel };
+const CardStyled = { CardWrapper, Title, Channel, Img };
 
 export default CardStyled;
