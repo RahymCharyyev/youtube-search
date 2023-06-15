@@ -1,24 +1,12 @@
-import { useMutation } from "react-query";
 import Styled from "./Home.styled";
 import Search from "components/search/Search";
-import { getVideos } from "api/videos";
-import { useEffect } from "react";
 import Card from "components/card/Card";
 import { IItems } from "types/videos";
+import { useVideos } from "hooks/useVideos";
 
 const Home = () => {
-  const { data, mutate, isLoading } = useMutation(
-    (query: string) => getVideos(query),
-    {
-      onError() {
-        alert("Huy");
-      },
-    }
-  );
-
-  useEffect(() => {
-    mutate("messi");
-  }, []);
+  const { data } = useVideos();
+  console.log({ data });
 
   return (
     <>

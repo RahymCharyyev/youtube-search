@@ -1,6 +1,10 @@
 import { Link as RouterLink } from "react-router-dom";
 import styled from "styled-components";
 
+interface ILinkProps {
+  isactive: string;
+}
+
 const Main = styled("div")`
   border-bottom: 1px solid #f1f1f1;
 `;
@@ -30,7 +34,7 @@ const Button = styled("button")`
   }
 `;
 
-const Link = styled(RouterLink)`
+const Link = styled(RouterLink)<ILinkProps>`
   display: flex;
   align-items: center;
   gap: 50px;
@@ -47,6 +51,13 @@ const Link = styled(RouterLink)`
     border-bottom: 2px solid #1390e5;
     padding: 38px 0;
   }
+  ${({ isactive }) =>
+    isactive === "true"
+      ? `
+    border-bottom: 2px solid #1390e5;
+    padding: 38px 0;
+    `
+      : ""}
 `;
 
 const HeaderStyled = { Main, Nav, Links, Link, Button };

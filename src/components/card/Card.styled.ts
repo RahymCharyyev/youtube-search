@@ -10,6 +10,11 @@ const CardWrapper = styled("div")`
 const Title = styled("h2")`
   font-size: 14px;
   padding: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin: 0;
 `;
 const Channel = styled("p")`
