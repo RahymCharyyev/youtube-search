@@ -1,56 +1,80 @@
-import { loginAtom } from "state/login/loginAtom";
 import Styled from "./Login.styled";
-import { ChangeEvent } from "react";
 import logo from "assets/logo.svg";
-import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
+import Input from "components/input/Input";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { toast, Toaster } from "react-hot-toast";
+
+export interface FormValues {
+  login: string;
+  password: string;
+}
+
 const Login = () => {
-  const [login, setLogin] = useRecoilState(loginAtom);
   const navigate = useNavigate();
 
-  const handleName = (event: ChangeEvent<HTMLInputElement>) => {
-    setLogin({ ...login, userName: event.target.value });
-  };
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({
+    defaultValues: {
+      login: "",
+      password: "",
+    },
+    resolver: yupResolver(schema),
+  });
 
-  const handlePassword = (event: ChangeEvent<HTMLInputElement>) => {
-    setLogin({ ...login, password: event.target.value });
-  };
-
-  const handleSubmit = () => {
-    if (login.userName && login.password === "admin") {
+  const onSubmit = (data: FormValues) => {
+    if (data.login && data.password === "admin") {
       localStorage.setItem("token", "true");
       navigate("/");
     } else {
-      alert("Имя пользователя или пароль не верны, введите верные данные");
+      toast.error(
+        "Введены неправильные данные, введите правильные данные и повторите попытку"
+      );
     }
   };
+
   return (
-    <Styled.Wrapper>
-      <Styled.Login>
-        <Styled.Img src={logo} alt="" width={100} />
-        <Styled.Title>Вход</Styled.Title>
-        <Styled.InputWrapper>
-          <Styled.Label>Логин</Styled.Label>
-          <Styled.LoginInput
+    <>
+      <Toaster position="top-right" reverseOrder={false} />
+      <Styled.Wrapper onSubmit={handleSubmit(onSubmit)}>
+        <Styled.Login>
+          <Styled.Img src={logo} alt="" width={100} />
+          <Styled.Title>Вход</Styled.Title>
+          <Input
+            name="login"
+            control={control}
             type="text"
-            onChange={handleName}
-            value={login.userName}
+            label="Логин"
+            error={errors.login?.message}
           />
-        </Styled.InputWrapper>
-        <Styled.InputWrapper>
-          <Styled.Label>Пароль</Styled.Label>
-          <Styled.LoginInput
+          <Input
+            name="password"
+            control={control}
             type="password"
-            onChange={handlePassword}
-            value={login.password}
+            label="Пароль"
+            error={errors.password?.message}
           />
-        </Styled.InputWrapper>
-        <Styled.Button type="submit" onClick={handleSubmit}>
-          Войти
-        </Styled.Button>
-      </Styled.Login>
-    </Styled.Wrapper>
+          <Styled.Button type="submit">Войти</Styled.Button>
+        </Styled.Login>
+      </Styled.Wrapper>
+    </>
   );
 };
 
 export default Login;
+
+const schema = yup.object({
+  login: yup
+    .string()
+    .required("Обязательное поле")
+    .min(4, "Логин должен состоять минимум из 5 символов"),
+  password: yup
+    .string()
+    .required("Обязательное поле")
+    .min(5, "Пароль должен состоять минимум из 5 символов"),
+});

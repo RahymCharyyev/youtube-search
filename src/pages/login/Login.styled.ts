@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")`
+const Wrapper = styled("form")`
   height: 100vh;
   display: flex;
   align-items: center;
@@ -23,11 +23,6 @@ const Img = styled("img")``;
 
 const Title = styled("h1")`
   font-size: 24px;
-`;
-
-const InputWrapper = styled("div")`
-  display: flex;
-  flex-direction: column;
 `;
 
 const LoginInput = styled("input")`
@@ -60,19 +55,13 @@ const Button = styled("button")`
   }
 `;
 
-const Label = styled("label")`
-  color: #1717194d;
-`;
-
 const LoginStyled = {
   Wrapper,
   Title,
   LoginInput,
   Img,
   Login,
-  InputWrapper,
   Button,
-  Label,
 };
 
 export default LoginStyled;
