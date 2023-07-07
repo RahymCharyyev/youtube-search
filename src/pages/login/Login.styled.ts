@@ -25,18 +25,6 @@ const Title = styled("h1")`
   font-size: 24px;
 `;
 
-const LoginInput = styled("input")`
-  height: 24px;
-  width: 304px;
-  border-radius: 10px;
-  padding: 12px 15px;
-  border: 1px solid #17171933;
-  &:focus {
-    outline-color: #1390e5;
-    background-color: rgba(197, 228, 249, 0.3);
-  }
-`;
-
 const Button = styled("button")`
   height: 52px;
   width: 176px;
@@ -58,7 +46,6 @@ const Button = styled("button")`
 const LoginStyled = {
   Wrapper,
   Title,
-  LoginInput,
   Img,
   Login,
   Button,

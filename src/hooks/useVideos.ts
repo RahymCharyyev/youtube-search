@@ -6,7 +6,7 @@ import { searchInputAtom } from "state/input/searchInputAtom";
 export const useVideos = () => {
   const [searchInput] = useRecoilState(searchInputAtom);
 
-  const { data, isLoading, refetch } = useQuery(
+  const { data, isFetching, refetch } = useQuery(
     ["videos"],
     () => getVideos(searchInput.input),
     {
@@ -14,8 +14,9 @@ export const useVideos = () => {
       onError() {
         alert("Error with your connection");
       },
+      refetchOnWindowFocus: false,
     }
   );
 
-  return { data, isLoading, refetch };
+  return { data, isFetching, refetch };
 };

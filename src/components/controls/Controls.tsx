@@ -1,19 +1,20 @@
 import Styled from "./Controls.Styled";
-import grid from "assets/grid.svg";
-import list from "assets/list.svg";
 import { useVideos } from "hooks/useVideos";
 import { searchInputAtom } from "state/input/searchInputAtom";
 import { useRecoilState } from "recoil";
-import { useState, useEffect, MouseEvent } from "react";
+import { useState, useEffect } from "react";
 import { layoutAtom } from "state/layout/layoutAtom";
+import { SvgList } from "assets/svg-icons/SvgList";
+import { SvgGrid } from "assets/svg-icons/SvgGrid";
+
 const Controls = () => {
-  const [_, setLayout] = useRecoilState(layoutAtom);
+  const [layout, setLayout] = useRecoilState(layoutAtom);
   const [query, setQuery] = useState("");
   const [searchInput] = useRecoilState(searchInputAtom);
   const { data } = useVideos();
 
-  const handleChange = (event: any) => {
-    setLayout(event.target.dataset.layout);
+  const handleChange = (layout: "row" | "card") => {
+    setLayout(layout);
   };
 
   const total = data?.pageInfo.totalResults || "-";
@@ -32,18 +33,20 @@ const Controls = () => {
           <Styled.Text>{total}</Styled.Text>
         </Styled.Left>
         <Styled.Right>
-          <Styled.Img
-            src={list}
-            alt=""
-            data-layout="row"
-            onClick={handleChange}
-          />
-          <Styled.Img
-            src={grid}
-            alt=""
-            data-layout="card"
-            onClick={handleChange}
-          />
+          <Styled.Button
+            layout={layout}
+            buttonLayout="row"
+            onClick={() => handleChange("row")}
+          >
+            <SvgList />
+          </Styled.Button>
+          <Styled.Button
+            layout={layout}
+            buttonLayout="card"
+            onClick={() => handleChange("card")}
+          >
+            <SvgGrid />
+          </Styled.Button>
         </Styled.Right>
       </Styled.Main>
     </>

@@ -27,19 +27,19 @@ const ContextMenu = (props: ContextMenuProps) => {
     }
   };
 
-  console.log(localStorage);
-
   return (
     <Styled.Main x={points.x} y={points.y}>
-      <a
+      <Styled.Link
         href={`https://www.youtube.com/watch?v=${videoInfo.videoId}`}
         target="_blank"
         rel="noopener noreferrer"
         className="video-link"
       >
         Открыть в новой вкладке
-      </a>
-      <button onClick={handleAddToFav}>Добавить в избранное</button>
+      </Styled.Link>
+      <Styled.Button onClick={handleAddToFav}>
+        Добавить в избранное
+      </Styled.Button>
     </Styled.Main>
   );
 };

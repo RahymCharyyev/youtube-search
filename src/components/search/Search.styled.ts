@@ -13,7 +13,7 @@ const Input = styled("input")`
   font-size: 20px;
   border: 1px solid #17171933;
   border-radius: 10px 0 0 10px;
-  padding: 0 0 0 15px;
+  padding: 0 15px 0 15px;
   &:focus {
     outline-color: #1390e5;
   }

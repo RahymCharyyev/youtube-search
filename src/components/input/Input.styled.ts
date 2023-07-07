@@ -11,6 +11,7 @@ const Label = styled("label")`
 `;
 
 const Input = styled("input")`
+  min-width: 335px;
   height: 24px;
   border-radius: 10px;
   padding: 12px 15px;
@@ -33,9 +34,8 @@ const Button = styled("button")`
   }
 `;
 const Error = styled("p")`
-  /* width: 50%; */
   white-space: pre-wrap;
-  text-align: left;
+  text-align: center;
   color: red;
   margin: 2px 0;
 `;

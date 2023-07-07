@@ -13,10 +13,10 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
   const { img, title, channel, layout, videoId } = props;
-  const { clicked, setClicked, points, setPoints } = useContextMenu();
+
+  const { setPoints } = useContextMenu();
   const handleContext = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    setClicked(true);
     setPoints({
       x: event.pageX,
       y: event.pageY,

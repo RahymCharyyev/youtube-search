@@ -1,11 +1,11 @@
 import Styled from "./Login.styled";
 import logo from "assets/logo.svg";
-import { useNavigate } from "react-router-dom";
 import Input from "components/input/Input";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { toast, Toaster } from "react-hot-toast";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 export interface FormValues {
   login: string;
@@ -43,7 +43,7 @@ const Login = () => {
       <Toaster position="top-right" reverseOrder={false} />
       <Styled.Wrapper onSubmit={handleSubmit(onSubmit)}>
         <Styled.Login>
-          <Styled.Img src={logo} alt="" width={100} />
+          <Styled.Img src={logo} alt="App logo" width={100} />
           <Styled.Title>Вход</Styled.Title>
           <Input
             name="login"

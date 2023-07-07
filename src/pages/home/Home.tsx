@@ -9,8 +9,7 @@ import { layoutAtom } from "state/layout/layoutAtom";
 
 const Home = () => {
   const layout = useRecoilValue(layoutAtom);
-  const { data } = useVideos();
-  console.log({ data });
+  const { data, isFetching } = useVideos();
 
   return (
     <>
@@ -19,16 +18,20 @@ const Home = () => {
         <Search />
         {data && <Controls />}
         <Styled.CardsWrapper layout={layout}>
-          {data?.items.map((video: IItems, index) => (
-            <Card
-              key={`videos-card-${index}`}
-              img={video.snippet.thumbnails.default.url}
-              title={video.snippet.title}
-              channel={video.snippet.channelTitle}
-              layout={layout}
-              videoId={video.id.videoId}
-            />
-          ))}
+          {isFetching ? (
+            <div>loading55555</div>
+          ) : (
+            data?.items.map((video: IItems, index) => (
+              <Card
+                key={`videos-card-${index}`}
+                img={video.snippet.thumbnails.default.url}
+                title={video.snippet.title}
+                channel={video.snippet.channelTitle}
+                layout={layout}
+                videoId={video.id.videoId}
+              />
+            ))
+          )}
         </Styled.CardsWrapper>
       </Styled.Main>
     </>
