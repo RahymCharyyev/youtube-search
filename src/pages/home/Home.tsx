@@ -7,15 +7,17 @@ import { useVideos } from "hooks/useVideos";
 import { useRecoilValue } from "recoil";
 import { layoutAtom } from "state/layout/layoutAtom";
 import ClipLoader from "react-spinners/ClipLoader";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const layout = useRecoilValue(layoutAtom);
   const { data, isFetching } = useVideos();
+  const { t } = useTranslation();
 
   return (
     <>
       <Styled.Main>
-        <Styled.Title hasData={Boolean(data)}>Поиск видео</Styled.Title>
+        <Styled.Title hasData={Boolean(data)}>{t("searchVideo")}</Styled.Title>
         <Search />
         {data && <Controls />}
         {isFetching ? (

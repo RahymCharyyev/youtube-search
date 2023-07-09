@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { toast, Toaster } from "react-hot-toast";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useTranslation } from "react-i18next";
 
 export interface FormValues {
   login: string;
@@ -14,7 +15,7 @@ export interface FormValues {
 
 const Login = () => {
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
   const {
     control,
     handleSubmit,
@@ -44,22 +45,22 @@ const Login = () => {
       <Styled.Wrapper onSubmit={handleSubmit(onSubmit)}>
         <Styled.Login>
           <Styled.Img src={logo} alt="App logo" width={100} />
-          <Styled.Title>Вход</Styled.Title>
+          <Styled.Title>{t("login")}</Styled.Title>
           <Input
             name="login"
             control={control}
             type="text"
-            label="Логин"
+            label={t("username")}
             error={errors.login?.message}
           />
           <Input
             name="password"
             control={control}
             type="password"
-            label="Пароль"
+            label={t("password")}
             error={errors.password?.message}
           />
-          <Styled.Button type="submit">Войти</Styled.Button>
+          <Styled.Button type="submit">{t("log_in")}</Styled.Button>
         </Styled.Login>
       </Styled.Wrapper>
     </>

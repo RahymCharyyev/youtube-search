@@ -3,6 +3,7 @@ import Styled from "./ContextMenu.styled";
 import { pointsAtom } from "state/points/pointsAtom";
 import { getLocalStorage } from "utils/getLocalStorage";
 import { setLocalStorage } from "utils/setLocalStorage";
+import { useTranslation } from "react-i18next";
 
 interface ContextMenuProps {
   videoInfo: {
@@ -16,6 +17,7 @@ interface ContextMenuProps {
 const ContextMenu = (props: ContextMenuProps) => {
   const { videoInfo } = props;
   const points = useRecoilValue(pointsAtom);
+  const { t } = useTranslation();
 
   const handleAddToFav = () => {
     const favorites = getLocalStorage("YTS-favorites");
@@ -35,11 +37,9 @@ const ContextMenu = (props: ContextMenuProps) => {
         rel="noopener noreferrer"
         className="video-link"
       >
-        Открыть в новой вкладке
+        {t("openNewTab")}
       </Styled.Link>
-      <Styled.Button onClick={handleAddToFav}>
-        Добавить в избранное
-      </Styled.Button>
+      <Styled.Button onClick={handleAddToFav}>{t("addToFav")}</Styled.Button>
     </Styled.Main>
   );
 };
