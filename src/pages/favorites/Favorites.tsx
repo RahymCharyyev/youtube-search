@@ -1,7 +1,7 @@
+import Styled from "./Favorites.styled";
 import Card from "components/card/Card";
+import NotFound from "pages/notFound/NotFound";
 import { useEffect, useState } from "react";
-import { useRecoilValue } from "recoil";
-import { layoutAtom } from "state/layout/layoutAtom";
 import { getLocalStorage } from "utils/getLocalStorage";
 import { setLocalStorage } from "utils/setLocalStorage";
 
@@ -13,7 +13,6 @@ interface LocalVideos {
 }
 
 const Favorites = () => {
-  const layout = useRecoilValue(layoutAtom);
   const [videos, setVideos] = useState<LocalVideos[]>([]);
 
   useEffect(() => {
@@ -32,19 +31,24 @@ const Favorites = () => {
   return (
     <>
       {videos.length === 0 ? (
-        <div>Loading...</div>
+        <NotFound
+          text="Список избранных пуст. Добавьте видео в список через контекстное меню,
+          нажав правую кнопку мыши на понравившемся видео"
+        />
       ) : (
         videos.map((video: LocalVideos, index) => (
-          <div key={`video-card-${index}`}>
+          <Styled.Wrapper key={`video-card-${index}`}>
             <Card
               img={video.img}
               title={video.title}
               channel={video.channel}
-              layout={layout}
+              layout={"row"}
               videoId={video.videoId}
             />
-            <button onClick={() => handleDelete(video.videoId)}>Удалить</button>
-          </div>
+            <Styled.Button onClick={() => handleDelete(video.videoId)}>
+              Удалить
+            </Styled.Button>
+          </Styled.Wrapper>
         ))
       )}
     </>

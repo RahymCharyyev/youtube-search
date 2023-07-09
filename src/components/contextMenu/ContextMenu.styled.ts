@@ -26,8 +26,8 @@ const Link = styled("a")`
   color: black;
   font-size: 18px;
   padding: 10px 20px;
+  font-family: "Rubik";
   font-weight: normal;
-
   &:hover {
     background-color: #c5e4f9;
     border-radius: 10px 10px 0 0;
@@ -36,6 +36,7 @@ const Link = styled("a")`
 
 const Button = styled("button")`
   text-decoration: none;
+  font-family: "Rubik";
   font-weight: normal;
   color: black;
   border: none;

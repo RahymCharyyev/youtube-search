@@ -6,6 +6,7 @@ import { IItems } from "types/videos";
 import { useVideos } from "hooks/useVideos";
 import { useRecoilValue } from "recoil";
 import { layoutAtom } from "state/layout/layoutAtom";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Home = () => {
   const layout = useRecoilValue(layoutAtom);
@@ -17,11 +18,18 @@ const Home = () => {
         <Styled.Title hasData={Boolean(data)}>Поиск видео</Styled.Title>
         <Search />
         {data && <Controls />}
-        <Styled.CardsWrapper layout={layout}>
-          {isFetching ? (
-            <div>loading55555</div>
-          ) : (
-            data?.items.map((video: IItems, index) => (
+        {isFetching ? (
+          <ClipLoader
+            color="#1390e5"
+            loading={true}
+            size={50}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            speedMultiplier={0.8}
+          />
+        ) : (
+          <Styled.CardsWrapper layout={layout}>
+            {data?.items.map((video: IItems, index) => (
               <Card
                 key={`videos-card-${index}`}
                 img={video.snippet.thumbnails.default.url}
@@ -30,9 +38,9 @@ const Home = () => {
                 layout={layout}
                 videoId={video.id.videoId}
               />
-            ))
-          )}
-        </Styled.CardsWrapper>
+            ))}
+          </Styled.CardsWrapper>
+        )}
       </Styled.Main>
     </>
   );

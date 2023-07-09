@@ -15,7 +15,7 @@ const Login = styled("div")`
   gap: 20px;
   align-items: center;
   justify-content: center;
-  border: 1px solid #2727271a;
+  border: 1px solid ${(props) => props.theme.loginColor};
   border-radius: 10px;
 `;
 
@@ -23,6 +23,8 @@ const Img = styled("img")``;
 
 const Title = styled("h1")`
   font-size: 24px;
+  font-family: "Rubik";
+  font-weight: bold;
 `;
 
 const Button = styled("button")`

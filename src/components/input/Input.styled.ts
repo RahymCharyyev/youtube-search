@@ -8,17 +8,23 @@ const Label = styled("label")`
   flex-direction: column;
   color: #1717194d;
   position: relative;
+  font-family: "Rubik";
+  font-weight: normal;
 `;
 
 const Input = styled("input")`
   min-width: 335px;
   height: 24px;
   border-radius: 10px;
+  font-family: "Rubik";
+  font-weight: bold;
   padding: 12px 15px;
   border: 1px solid #17171933;
+  outline: none;
+  caret-color: ${(props) => props.theme.caretColor};
+  background-color: ${(props) => props.theme.inputColor};
   &:focus {
-    outline-color: #1390e5;
-    background-color: rgba(197, 228, 249, 0.3);
+    border: 1px solid #1390e5;
   }
 `;
 
@@ -38,6 +44,8 @@ const Error = styled("p")`
   text-align: center;
   color: red;
   margin: 2px 0;
+  font-family: "Rubik";
+  font-weight: normal;
 `;
 
 const Img = styled("img")``;

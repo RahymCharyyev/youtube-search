@@ -1,12 +1,16 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Home from "pages/home/Home";
 import Favorites from "pages/favorites/Favorites";
 import Login from "pages/login/Login";
 import NotFound from "pages/notFound/NotFound";
 import Header from "components/header/Header";
-import { useEffect } from "react";
+import Footer from "components/footer/Footer";
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 
 function App() {
+  const [theme, setTheme] = useState(lightTheme);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,15 +20,26 @@ function App() {
     }
   }, []);
 
+  const switchTheme = () => {
+    theme === lightTheme ? setTheme(darkTheme) : setTheme(lightTheme);
+  };
+
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header switchTheme={switchTheme} theme={theme} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="*"
+            element={<NotFound text="Упс, такой страницы не существует :)" />}
+          />
+        </Routes>
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }

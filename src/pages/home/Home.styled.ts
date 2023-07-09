@@ -22,7 +22,18 @@ const Title = styled("div")<TitleProps>(
   text-align: center;
   margin-top: 30vh;
   transition: all 0.4s;
-${hasData && ` margin-top: 30px;`} 
+  font-family: 'Rubik';
+  font-weight: bold;
+${hasData && ` margin-top: 30px;`}
+  @media screen and (max-width: 885px) {
+  font-size: 32px;
+  }
+  @media screen and (max-width: 710px) {
+    font-size: 28px;
+  }
+  @media screen and (max-width: 560px) {
+    font-size: 22px;
+  } 
 `
 );
 

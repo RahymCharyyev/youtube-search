@@ -1,9 +1,9 @@
 import Styled from "./NotFound.styled";
 
-const NotFound = () => {
+const NotFound = ({ text }: { text: string }) => {
   return (
     <Styled.Main>
-      <Styled.Text>Упс, такой страницы не существует :)</Styled.Text>
+      <Styled.Text>{text}</Styled.Text>
       <Styled.Button to={"/"}>На главную </Styled.Button>
     </Styled.Main>
   );

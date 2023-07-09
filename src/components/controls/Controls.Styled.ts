@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 
 interface ControlsProps {
   layout: `card` | `row`;
   buttonLayout: `card` | `row`;
+  theme: DefaultTheme;
 }
 
 const Main = styled("div")`
@@ -10,6 +11,8 @@ const Main = styled("div")`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: "Rubik";
+  font-weight: bold;
 `;
 
 const Left = styled("div")`
@@ -29,28 +32,22 @@ const Right = styled("div")`
 const Title = styled("p")``;
 
 const Text = styled("p")`
-  color: #1717194d;
+  color: ${(props) => props.theme.channelColor};
 `;
 
-const Button = styled("button")<ControlsProps>(({ layout, buttonLayout }) =>
-  layout === buttonLayout
-    ? `
+const Button = styled.button<ControlsProps>`
   cursor: pointer;
-  color: black;
+  color: ${(props) => props.theme.textColor};
   background: none;
   border: none;
   width: 10px;
-`
-    : `
-  cursor: pointer;
-  color: #1717194D;
-  background: none;
-  border: none;
-  width: 10px;
-}
-  `
-);
 
+  ${({ layout, buttonLayout }) =>
+    layout !== buttonLayout &&
+    `
+    color: grey;
+  `}
+`;
 const ControlsStyled = { Main, Left, Right, Text, Title, Button };
 
 export default ControlsStyled;
