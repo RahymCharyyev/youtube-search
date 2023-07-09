@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-const Wrapper = styled("form")`
-  height: 100px;
+const Wrapper = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 250px;
   border-top: 1px solid #f1f1f1;
+  padding-top: 20px;
+  margin-top: 290px;
   @media screen and (max-width: 560px) {
     margin-top: 120px;
   }

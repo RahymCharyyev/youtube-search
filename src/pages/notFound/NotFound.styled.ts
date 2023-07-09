@@ -15,6 +15,13 @@ const Text = styled("p")`
   font-size: 28px;
   font-family: "Rubik";
   text-align: center;
+  padding: 0 9%;
+  @media screen and (max-width: 710px) {
+    font-size: 22px;
+  }
+  @media screen and (max-width: 560px) {
+    font-size: 18px;
+  }
 `;
 
 const Button = styled(NavLink)`
@@ -29,6 +36,12 @@ const Button = styled(NavLink)`
   &:hover {
     color: white;
     background-color: #1390e5;
+  }
+  @media screen and (max-width: 710px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 560px) {
+    font-size: 16px;
   }
 `;
 

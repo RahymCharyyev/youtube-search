@@ -18,13 +18,21 @@ const Input = styled("input")`
   border-radius: 10px;
   font-family: "Rubik";
   font-weight: bold;
-  padding: 12px 15px;
+  padding: 15px 15px;
   border: 1px solid #17171933;
   outline: none;
   caret-color: ${(props) => props.theme.caretColor};
   background-color: ${(props) => props.theme.inputColor};
   &:focus {
     border: 1px solid #1390e5;
+  }
+  @media screen and (max-width: 710px) {
+    height: 42px;
+    width: 116px;
+  }
+  @media screen and (max-width: 560px) {
+    min-width: 280px;
+    height: 18px;
   }
 `;
 
