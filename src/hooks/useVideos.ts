@@ -2,7 +2,7 @@ import { useRecoilState } from "recoil";
 import { getVideos } from "api/videos";
 import { useQuery } from "@tanstack/react-query";
 import { searchInputAtom } from "state/input/searchInputAtom";
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 export const useVideos = () => {
   const [searchInput] = useRecoilState(searchInputAtom);
@@ -13,8 +13,8 @@ export const useVideos = () => {
     {
       enabled: searchInput.isActive,
       onError() {
-        alert("Error with your connection");
-        toast.error("Error with your connectio");
+        // alert("Error with your connection");
+        toast.error("Error with your connection");
       },
       refetchOnWindowFocus: false,
     }

@@ -18,7 +18,7 @@ function App() {
     if (!token) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate]);
 
   const switchTheme = () => {
     theme === lightTheme ? setTheme(darkTheme) : setTheme(lightTheme);

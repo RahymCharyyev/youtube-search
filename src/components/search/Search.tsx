@@ -6,7 +6,8 @@ import Styled from "./Search.styled";
 
 const Search = () => {
   const [searchInput, setSearchInput] = useRecoilState(searchInputAtom);
-  const { refetch, isFetching } = useVideos();
+  const { refetch } = useVideos();
+  // TODO const { refetch, isFetching } = useVideos();
 
   const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchInput({ ...searchInput, input: event.target.value });
