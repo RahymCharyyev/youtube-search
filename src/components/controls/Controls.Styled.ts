@@ -13,19 +13,28 @@ const Main = styled("div")`
   justify-content: space-around;
   font-family: "Rubik";
   font-weight: bold;
+  @media screen and (max-width: 410px) {
+    justify-content: center;
+    gap: 10px;
+  }
 `;
 
 const Left = styled("div")`
   display: flex;
   flex-direction: row;
   gap: 15px;
+  @media screen and (max-width: 410px) {
+    gap: 15px;
+  }
 `;
 
 const Right = styled("div")`
   display: flex;
   flex-direction: row;
   gap: 20px;
-  font-size: 24px;
+  @media screen and (max-width: 410px) {
+    gap: 15px;
+  }
 `;
 
 const Title = styled("p")``;

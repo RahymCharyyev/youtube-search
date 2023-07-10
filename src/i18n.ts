@@ -31,6 +31,7 @@ i18n.use(initReactI18next).init({
           "Favorites list is empty. Add a video to the list via the context menu by right-clicking on the video you like",
         toMain: "To main page",
         notFound: "Oops, no such page exists :)",
+        foundVideo: "Video on demand",
       },
     },
     ru: {
@@ -56,6 +57,7 @@ i18n.use(initReactI18next).init({
           "Список избранных пуст. Вы можете добавить видео в список через контекстное меню, нажав правую кнопку мыши на понравившемся видео",
         toMain: "На главную",
         notFound: "Упс, такой страницы не существует :)",
+        foundVideo: "Видео по запросу",
       },
     },
     tm: {
@@ -81,6 +83,7 @@ i18n.use(initReactI18next).init({
           "Saýlananlaryň sanawy boş. Halan wideoňyza  syçanjygyň sag düwmesi bilen basyp, kontekst menýusy arkaly wideolary sanawa goşup bilersiňiz",
         toMain: "Esasy sahypa",
         notFound: "Wah, bu sahypa ýok :)",
+        foundVideo: "Gözlenen wideo",
       },
     },
   },

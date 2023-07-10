@@ -19,6 +19,9 @@ const CardWrapper = styled.div<CardWrapperProps>(({ layout, theme }) =>
       height: 88px;
     }
   }
+    @media screen and (max-width: 410px) {
+    width: 157px;
+  }
 
 `
     : `
@@ -37,8 +40,6 @@ const CardWrapper = styled.div<CardWrapperProps>(({ layout, theme }) =>
       background: ${theme.hoverColor};
       color: #000;
     }
-    @media screen and (max-width: 1070px) {
-  }
   `
 );
 
