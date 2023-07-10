@@ -8,10 +8,12 @@ import Header from "components/header/Header";
 import Footer from "components/footer/Footer";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme, GlobalStyles } from "./theme";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -33,10 +35,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/login" element={<Login />} />
-          <Route
-            path="*"
-            element={<NotFound text="Упс, такой страницы не существует :)" />}
-          />
+          <Route path="*" element={<NotFound text={t("notFound")} />} />
         </Routes>
         <Footer />
       </ThemeProvider>

@@ -7,10 +7,10 @@ interface ControlsProps {
 }
 
 const Main = styled("div")`
-  width: 1040px;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: "Rubik";
   font-weight: bold;
 `;
@@ -25,7 +25,6 @@ const Right = styled("div")`
   display: flex;
   flex-direction: row;
   gap: 20px;
-  color: red;
   font-size: 24px;
 `;
 

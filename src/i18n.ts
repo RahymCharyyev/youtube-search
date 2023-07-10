@@ -27,6 +27,10 @@ i18n.use(initReactI18next).init({
         addToFav: "Add to favorites",
         developed: "Developed by:",
         github: "my Github",
+        favNotFound:
+          "Favorites list is empty. Add a video to the list via the context menu by right-clicking on the video you like",
+        toMain: "To main page",
+        notFound: "Oops, no such page exists :)",
       },
     },
     ru: {
@@ -48,6 +52,10 @@ i18n.use(initReactI18next).init({
         addToFav: "Добавить в избранное",
         developed: "Разработал:",
         github: "мой Github",
+        favNotFound:
+          "Список избранных пуст. Вы можете добавить видео в список через контекстное меню, нажав правую кнопку мыши на понравившемся видео",
+        toMain: "На главную",
+        notFound: "Упс, такой страницы не существует :)",
       },
     },
     tm: {
@@ -69,6 +77,10 @@ i18n.use(initReactI18next).init({
         addToFav: "Saýlananlara goşmak",
         developed: "Döreden:",
         github: "meniň Github-ym",
+        favNotFound:
+          "Saýlananlaryň sanawy boş. Halan wideoňyza  syçanjygyň sag düwmesi bilen basyp, kontekst menýusy arkaly wideolary sanawa goşup bilersiňiz",
+        toMain: "Esasy sahypa",
+        notFound: "Wah, bu sahypa ýok :)",
       },
     },
   },

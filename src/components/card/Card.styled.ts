@@ -12,6 +12,13 @@ const CardWrapper = styled.div<CardWrapperProps>(({ layout, theme }) =>
   display: flex;
   flex-direction: column;
   gap: 8px;
+  @media screen and (max-width: 1070px) {
+    width: 200px;
+    ${Img} {
+      width: 157px;
+      height: 88px;
+    }
+  }
 
 `
     : `
@@ -30,6 +37,8 @@ const CardWrapper = styled.div<CardWrapperProps>(({ layout, theme }) =>
       background: ${theme.hoverColor};
       color: #000;
     }
+    @media screen and (max-width: 1070px) {
+  }
   `
 );
 

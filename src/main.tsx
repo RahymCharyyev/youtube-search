@@ -1,5 +1,5 @@
 import React from "react";
-import GlobalFonts from "./styles";
+import GlobalFonts from "./theme";
 import App from "./App";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";

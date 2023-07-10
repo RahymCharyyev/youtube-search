@@ -44,11 +44,29 @@ const CardsWrapper = styled("div")<CardsWrapper>(
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+  @media screen and (max-width: 885px) {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 670px) {
+      grid-template-columns: repeat(2, 1fr);
+  }
   `
       : `
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @media screen and (max-width: 970px) {
+      width: 800px;
+  }
+    @media screen and (max-width: 860px) {
+      width: 700px;
+  }
+    @media screen and (max-width: 760px) {
+      width: 600px;
+  }
+    @media screen and (max-width: 670px) {
+      width: 300px;
+  }
   `,
   () => `.video-link {
     text-decoration: none;
