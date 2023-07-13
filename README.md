@@ -50,11 +50,11 @@ This is a YouTube video search application built with React and TypeScript. It a
 
 ## :sparkles: Features
 
-:heavy_check_mark: Search for YouTube videos by entering the name in the search bar.
-:heavy_check_mark: Display search results with video thumbnails, titles, and channel information.
-:heavy_check_mark: Add videos to a favorites list for quick access.
-:heavy_check_mark: Watch videos on the Youtube app by clicking on the video thumbnail.
-:heavy_check_mark: Responsive design for optimal viewing on different devices.
+:heavy_check_mark: Search for YouTube videos by entering the name in the search bar;\
+:heavy_check_mark: Display search results with video thumbnails, titles, and channel information;\
+:heavy_check_mark: Add videos to a favorites list for quick access;\
+:heavy_check_mark: Watch videos on the Youtube app by clicking on the video thumbnail;\
+:heavy_check_mark: Responsive design for optimal viewing on different devices;
 
 ## :rocket: Technologies
 
@@ -88,15 +88,28 @@ $ cd youtube-search
 # Install dependencies
 $ npm install
 
+```
+
+Obtain a YouTube Data API key by following the instructions <a href="https://developers.google.com/youtube/v3/getting-started" target="_blank">here</a>.
+
+```bash
+# Open a .env file in the root directory of the project and replace the following line:
+$ VITE_API_KEY=your-api-key
+
+```
+
+```bash
+
 # Run the project
+
 $ npm run dev
 
 # The server will initialize in the <http://localhost:4000>
 ```
 
-## :memo: License
+## :memo: Contact
 
-Made by <a href="https://github.com/RahymCharyyev" target="_blank">Rahym Charyyev</a>
+For any inquiries or questions, please contact <a href="https://github.com/RahymCharyyev" target="_blank">Rahym Charyyev</a>
 
 &#xa0;
 
