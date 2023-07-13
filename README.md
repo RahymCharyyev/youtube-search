@@ -46,13 +46,15 @@
 
 ## :dart: About
 
-Describe your project
+This is a YouTube video search application built with React and TypeScript. It allows users to search for videos on YouTube, add them to a favorites list, and watch them on the Youtube app.
 
 ## :sparkles: Features
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Search for YouTube videos by entering the name in the search bar.
+:heavy_check_mark: Display search results with video thumbnails, titles, and channel information.
+:heavy_check_mark: Add videos to a favorites list for quick access.
+:heavy_check_mark: Watch videos on the Youtube app by clicking on the video thumbnail.
+:heavy_check_mark: Responsive design for optimal viewing on different devices.
 
 ## :rocket: Technologies
 
@@ -84,19 +86,17 @@ $ git clone https://github.com/RahymCharyyev/youtube-search
 $ cd youtube-search
 
 # Install dependencies
-$ yarn
+$ npm install
 
 # Run the project
-$ yarn start
+$ npm run dev
 
-# The server will initialize in the <http://localhost:3000>
+# The server will initialize in the <http://localhost:4000>
 ```
 
 ## :memo: License
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
-Made with :heart: by <a href="https://github.com/RahymCharyyev" target="_blank">{{YOUR_NAME}}</a>
+Made by <a href="https://github.com/RahymCharyyev" target="_blank">Rahym Charyyev</a>
 
 &#xa0;
 
