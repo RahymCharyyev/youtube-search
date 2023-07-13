@@ -20,6 +20,7 @@ declare module "styled-components" {
     caretColor: string;
     logoutColor: string;
     loginColor: string;
+    inputLabelColor: string;
   }
 }
 
@@ -32,6 +33,7 @@ export const darkTheme: DefaultTheme = {
   caretColor: "#fff",
   logoutColor: "#fff",
   loginColor: "#1390e5",
+  inputLabelColor: "#525252",
 };
 
 export const lightTheme: DefaultTheme = {
@@ -43,6 +45,7 @@ export const lightTheme: DefaultTheme = {
   caretColor: "#000",
   logoutColor: "#2727274d",
   loginColor: "#2727271a",
+  inputLabelColor: "#1717194d",
 };
 
 export const GlobalStyles = createGlobalStyle`

@@ -32,6 +32,12 @@ i18n.use(initReactI18next).init({
         toMain: "To main page",
         notFound: "Oops, no such page exists :)",
         foundVideo: "Video on demand",
+        errorConnection:
+          "Connection error. Check your internet connection and try again",
+        deleteFromFavs: "delete from favorites",
+        requiredField: "Required field",
+        loginField: "Login must be at least 5 characters",
+        passwordField: "Password must be at least 5 characters long",
       },
     },
     ru: {
@@ -58,6 +64,12 @@ i18n.use(initReactI18next).init({
         toMain: "На главную",
         notFound: "Упс, такой страницы не существует :)",
         foundVideo: "Видео по запросу",
+        errorConnection:
+          "Ошибка подключения. Проверьте подключение к Интернету и повторите попытку",
+        deleteFromFavs: "удалить из избранных",
+        requiredField: "Обязательное поле",
+        loginField: "Логин должен состоять минимум из 5 символов",
+        passwordField: "Пароль должен состоять минимум из 5 символов",
       },
     },
     tm: {
@@ -84,6 +96,12 @@ i18n.use(initReactI18next).init({
         toMain: "Esasy sahypa",
         notFound: "Wah, bu sahypa ýok :)",
         foundVideo: "Gözlenen wideo",
+        errorConnection:
+          "Birikdiriş ýalňyşlygy. Internet birikmäňizi barlaň we gaýtadan synanyşyň",
+        deleteFromFavs: "saýlananlardan pozmak",
+        requiredField: "Hökman doldurmaly",
+        loginField: "Ulanyjynyň ady azyndan 5 simwoldan ybarat bolmaly",
+        passwordField: "Gizlin açar azyndan 5 simwoldan ybarat bolmaly",
       },
     },
   },

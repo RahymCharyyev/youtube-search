@@ -45,7 +45,7 @@ const Favorites = () => {
               videoId={video.videoId}
             />
             <Styled.Button onClick={() => handleDelete(video.videoId)}>
-              {t("delete")}
+              {t("deleteFromFavs")}
             </Styled.Button>
           </Styled.Wrapper>
         ))

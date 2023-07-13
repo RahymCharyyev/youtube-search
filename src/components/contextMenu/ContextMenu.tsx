@@ -4,29 +4,27 @@ import { pointsAtom } from "state/points/pointsAtom";
 import { getLocalStorage } from "utils/getLocalStorage";
 import { setLocalStorage } from "utils/setLocalStorage";
 import { useTranslation } from "react-i18next";
+import { videoInfoAtom } from "state/videoInfo/videoInfoAtom";
+import { useLocation } from "react-router-dom";
 
-interface ContextMenuProps {
-  videoInfo: {
-    img: string;
-    title: string;
-    channel: string;
-    videoId: string;
-  };
-}
-
-const ContextMenu = (props: ContextMenuProps) => {
-  const { videoInfo } = props;
+const ContextMenu = () => {
+  const videoInfo = useRecoilValue(videoInfoAtom);
   const points = useRecoilValue(pointsAtom);
   const { t } = useTranslation();
+  const location = useLocation();
+
+  if (location.pathname === "/favorites") {
+    return null;
+  }
 
   const handleAddToFav = () => {
     const favorites = getLocalStorage("YTS-favorites");
-
     if (favorites !== null) {
       setLocalStorage("YTS-favorites", [...favorites, videoInfo]);
     } else {
       setLocalStorage("YTS-favorites", [videoInfo]);
     }
+    console.log(videoInfo);
   };
 
   return (

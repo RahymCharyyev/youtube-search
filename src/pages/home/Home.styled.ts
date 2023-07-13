@@ -55,6 +55,10 @@ const CardsWrapper = styled("div")<CardsWrapper>(
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 1100px;
+    @media screen and (max-width: 1100px) {
+      width: 900px;
+  }
     @media screen and (max-width: 970px) {
       width: 800px;
   }

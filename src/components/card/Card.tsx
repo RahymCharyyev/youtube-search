@@ -2,6 +2,8 @@ import useContextMenu from "hooks/useContextMenu";
 import Styled from "./Card.styled";
 import { MouseEvent } from "react";
 import ContextMenu from "components/contextMenu/ContextMenu";
+import { useRecoilState } from "recoil";
+import { videoInfoAtom } from "state/videoInfo/videoInfoAtom";
 
 interface CardProps {
   img: string;
@@ -13,26 +15,27 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
   const { img, title, channel, layout, videoId } = props;
-
   const { setPoints } = useContextMenu();
+
+  const [_, setVideoInfo] = useRecoilState(videoInfoAtom);
+
   const handleContext = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
+    setVideoInfo({
+      img,
+      title,
+      channel,
+      videoId,
+    });
     setPoints({
       x: event.pageX,
       y: event.pageY,
     });
   };
 
-  const videoInfo = {
-    img,
-    title,
-    channel,
-    videoId,
-  };
-
   return (
     <>
-      <a
+      <Styled.Link
         href={`https://www.youtube.com/watch?v=${videoId}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -51,9 +54,9 @@ const Card = (props: CardProps) => {
             <Styled.Channel>{channel}</Styled.Channel>
           </div>
         </Styled.CardWrapper>
-      </a>
+      </Styled.Link>
 
-      <ContextMenu videoInfo={videoInfo} />
+      <ContextMenu />
     </>
   );
 };

@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast, Toaster } from "react-hot-toast";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { useTranslation } from "react-i18next";
+import * as yup from "yup";
 
 export interface FormValues {
   login: string;
@@ -25,7 +25,7 @@ const Login = () => {
       login: "",
       password: "",
     },
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema(t)),
   });
 
   const onSubmit = (data: FormValues) => {
@@ -33,9 +33,7 @@ const Login = () => {
       localStorage.setItem("token", "true");
       navigate("/");
     } else {
-      toast.error(
-        "Введены неправильные данные, введите правильные данные и повторите попытку"
-      );
+      toast.error(t("loginError"));
     }
   };
 
@@ -69,13 +67,11 @@ const Login = () => {
 
 export default Login;
 
-const schema = yup.object({
-  login: yup
-    .string()
-    .required("Обязательное поле")
-    .min(4, "Логин должен состоять минимум из 5 символов"),
-  password: yup
-    .string()
-    .required("Обязательное поле")
-    .min(5, "Пароль должен состоять минимум из 5 символов"),
-});
+const schema = (t: (key: string) => string) =>
+  yup.object({
+    login: yup.string().required(t("requiredField")).min(4, t("loginField")),
+    password: yup
+      .string()
+      .required(t("requiredField"))
+      .min(5, t("passwordField")),
+  });

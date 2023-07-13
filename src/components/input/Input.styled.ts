@@ -6,7 +6,7 @@ const InputWrapper = styled("div")`
 const Label = styled("label")`
   display: flex;
   flex-direction: column;
-  color: #1717194d;
+  color: ${(props) => props.theme.inputLabelColor};
   position: relative;
   font-family: "Rubik";
   font-weight: normal;
@@ -21,6 +21,7 @@ const Input = styled("input")`
   padding: 15px 15px;
   border: 1px solid #17171933;
   outline: none;
+  color: ${(props) => props.theme.textColor};
   caret-color: ${(props) => props.theme.caretColor};
   background-color: ${(props) => props.theme.inputColor};
   &:focus {

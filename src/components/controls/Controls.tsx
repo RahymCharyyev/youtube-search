@@ -35,6 +35,16 @@ const Controls = () => {
           <Styled.Text>{total}</Styled.Text>
         </Styled.Left>
         <Styled.Right>
+          <select
+            name="Количество отображаемых видео"
+            id="Количество отображаемых видео"
+          >
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+            <option value="48">48</option>
+            <option value="60">60</option>
+          </select>
           <Styled.Button
             layout={layout}
             buttonLayout="row"

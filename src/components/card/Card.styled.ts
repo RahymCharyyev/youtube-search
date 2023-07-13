@@ -25,7 +25,7 @@ const CardWrapper = styled.div<CardWrapperProps>(({ layout, theme }) =>
 
 `
     : `
-    width: 100%;
+    width: 1100px;
     display: flex;
     gap: 20px;
     padding: 10px;
@@ -40,8 +40,27 @@ const CardWrapper = styled.div<CardWrapperProps>(({ layout, theme }) =>
       background: ${theme.hoverColor};
       color: #000;
     }
+    @media screen and (max-width: 1100px) {
+      width: 900px;
+    }
+    @media screen and (max-width: 970px) {
+      width: 800px;
+    }
+    @media screen and (max-width: 860px) {
+      width: 700px;
+    }
+    @media screen and (max-width: 760px) {
+      width: 600px;
+    }
+    @media screen and (max-width: 670px) {
+      width: 300px;
+    }
   `
 );
+
+const Link = styled.a`
+  text-decoration: none;
+`;
 
 const Img = styled.img`
   border-radius: 10px;
@@ -71,6 +90,6 @@ const Channel = styled.p<{ theme: DefaultTheme }>`
   color: ${(props) => props.theme.channelColor};
 `;
 
-const CardStyled = { CardWrapper, Title, Channel, Img };
+const CardStyled = { CardWrapper, Title, Channel, Img, Link };
 
 export default CardStyled;

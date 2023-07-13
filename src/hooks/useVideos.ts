@@ -3,8 +3,10 @@ import { getVideos } from "api/videos";
 import { useQuery } from "@tanstack/react-query";
 import { searchInputAtom } from "state/input/searchInputAtom";
 import { toast } from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 export const useVideos = () => {
+  const { t } = useTranslation();
   const [searchInput] = useRecoilState(searchInputAtom);
 
   const { data, isFetching, refetch } = useQuery(
@@ -13,8 +15,7 @@ export const useVideos = () => {
     {
       enabled: searchInput.isActive,
       onError() {
-        // alert("Error with your connection");
-        toast.error("Error with your connection");
+        toast.error(t("errorConnection"));
       },
       refetchOnWindowFocus: false,
     }

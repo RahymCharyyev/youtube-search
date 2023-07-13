@@ -9,11 +9,15 @@ import Footer from "components/footer/Footer";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 import { useTranslation } from "react-i18next";
+import { setLocalStorage } from "utils/setLocalStorage";
 
 function App() {
-  const [theme, setTheme] = useState(lightTheme);
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const savedTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(
+    savedTheme ? JSON.parse(savedTheme) : lightTheme
+  );
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -23,23 +27,23 @@ function App() {
   }, [navigate]);
 
   const switchTheme = () => {
-    theme === lightTheme ? setTheme(darkTheme) : setTheme(lightTheme);
+    const newTheme = theme === lightTheme ? darkTheme : lightTheme;
+    setTheme(newTheme);
+    setLocalStorage("theme", newTheme);
   };
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Header switchTheme={switchTheme} theme={theme} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NotFound text={t("notFound")} />} />
-        </Routes>
-        <Footer />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Header switchTheme={switchTheme} theme={theme} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound text={t("notFound")} />} />
+      </Routes>
+      <Footer />
+    </ThemeProvider>
   );
 }
 
