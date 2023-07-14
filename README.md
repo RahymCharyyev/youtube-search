@@ -3,7 +3,8 @@
 
 &#xa0;
 
-  <!-- <a href="https://youtubesearch.netlify.app">Demo</a> -->
+<a href="https://youtube-search-tau.vercel.app">Production</a>
+
 </div>
 
 <h1 align="center">Youtube Search</h1>
@@ -15,11 +16,11 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/RahymCharyyev/youtube-search?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/RahymCharyyev/youtube-search?color=56BEB8">
+  <!-- <img alt="License" src="https://img.shields.io/github/license/RahymCharyyev/youtube-search?color=56BEB8"> -->
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/RahymCharyyev/youtube-search?color=56BEB8" />
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/RahymCharyyev/youtube-search?color=56BEB8" /> -->
 
-  <img alt="Github forks" src="https://img.shields.io/github/forks/RahymCharyyev/youtube-search?color=56BEB8" />
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/RahymCharyyev/youtube-search?color=56BEB8" /> -->
 
   <img alt="Github stars" src="https://img.shields.io/github/stars/RahymCharyyev/youtube-search?color=56BEB8" />
 </p>
@@ -38,8 +39,8 @@
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/RahymCharyyev" target="_blank">Author</a>
+  <a href="#memo-license">Screenshots</a> &#xa0; | &#xa0;
+  <a href="#memo-contact">Author</a> 
 </p>
 
 <br>
@@ -47,6 +48,8 @@
 ## :dart: About
 
 This is a YouTube video search application built with React and TypeScript. It allows users to search for videos on YouTube, add them to a favorites list, and watch them on the Youtube app.
+
+Just type admin to username and password fields.
 
 ## :sparkles: Features
 
@@ -105,7 +108,19 @@ $ VITE_API_KEY=your-api-key
 $ npm run dev
 
 # The server will initialize in the <http://localhost:4000>
+
 ```
+
+## :memo: Screenshots
+
+![Alt text](1.png) \
+![Alt text](2.png) \
+![Alt text](3.png) \
+![Alt text](4.png) \
+![Alt text](5.png) \
+![Alt text](6.png) \
+![Alt text](7.png) \
+&#xa0;
 
 ## :memo: Contact
 
