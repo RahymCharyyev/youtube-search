@@ -39,7 +39,7 @@
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">Screenshots</a> &#xa0; | &#xa0;
+  <a href="#memo-screenshots">Screenshots</a> &#xa0; | &#xa0;
   <a href="#memo-contact">Author</a> 
 </p>
 
@@ -114,11 +114,17 @@ $ npm run dev
 ## :memo: Screenshots
 
 ![Alt text](1.png) \
+&#xa0;
 ![Alt text](2.png) \
+&#xa0;
 ![Alt text](3.png) \
+&#xa0;
 ![Alt text](4.png) \
+&#xa0;
 ![Alt text](5.png) \
+&#xa0;
 ![Alt text](6.png) \
+&#xa0;
 ![Alt text](7.png) \
 &#xa0;
 
