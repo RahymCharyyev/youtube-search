@@ -35,7 +35,8 @@ const Controls = () => {
           <Styled.Text>{total}</Styled.Text>
         </Styled.Left>
         <Styled.Right>
-          <select
+          {/* TODO */}
+          {/* <select
             name="Количество отображаемых видео"
             id="Количество отображаемых видео"
           >
@@ -44,7 +45,7 @@ const Controls = () => {
             <option value="36">36</option>
             <option value="48">48</option>
             <option value="60">60</option>
-          </select>
+          </select> */}
           <Styled.Button
             layout={layout}
             buttonLayout="row"
